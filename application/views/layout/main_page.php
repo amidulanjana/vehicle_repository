@@ -158,6 +158,7 @@
         <div class="row">
 <!--          { SITE CONTENT (You can do your work here)}-->
           <?php $this->load->view($register_view)?>
+
         </div>
       </div>
     </section>  <!-- section ends -->
