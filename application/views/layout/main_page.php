@@ -14,6 +14,7 @@
   <link href="<?php echo base_url();?>img/favicon.png" rel="icon" type="image/png">
   <!-- Bootstrap style -->
   <link href="<?php echo base_url();?>assets/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+  <link href="<?php echo base_url();?>assets/css/bootstrap.css" rel="stylesheet" media="screen" />
   <!-- Font Awesome Style -->
   <link href="<?php echo base_url();?>assets/css/font-awesome.min.css" rel="stylesheet" media="screen" />
   <!-- Animate Style -->
@@ -30,14 +31,38 @@
   <link href="<?php echo base_url();?>assets/css/color/color-1.css" rel="stylesheet" media="screen" id="color" />
 	<!-- Responsive css -->
   <link href="<?php echo base_url();?>assets/css/responsive.css" rel="stylesheet" media="screen" />
+  <!-- Validation css -->
+  <link href="<?php echo base_url();?>assets/css/bootstrapValidator.css" rel="stylesheet" media="screen" />
   <!-- Google Web Fonts -->
   <link href='http://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Cabin:400,600' rel='stylesheet' type='text/css'> 
+  <link href='http://fonts.googleapis.com/css?family=Cabin:400,600' rel='stylesheet' type='text/css'>
+
+  <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
+  <script src="<?php echo base_url();?>assets/js/bootstrapValidator.js"></script>
+  <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/jquery.easing.js"></script>
+  <script src="<?php echo base_url();?>assets/js/jquery.isotope.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/jquery.fitvids.js"></script>
+  <script src="<?php echo base_url();?>assets/js/jquery.appear.js"></script>
+  <script src="<?php echo base_url();?>assets/js/retina.js"></script>
+  <script src="<?php echo base_url();?>assets/js/respond.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/jquery.parallax-1.1.3.js"></script>
+  <script src="<?php echo base_url();?>assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/jquery.sticky.js"></script>
+  <script src="<?php echo base_url();?>assets/js/jquery.countTo.js"></script>
+  <script src="<?php echo base_url();?>assets/js/owl.carousel.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/jquery.flexslider-min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/ion.rangeSlider.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/selectnav.js"></script>
+  <script src="<?php echo base_url();?>assets/js/responsive-tabs.js"></script>
+  <script src="<?php echo base_url();?>assets/js/bootstrap-select.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/functions.js"></script>
+
   <!-- Internet Explorer condition - HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-  <!-- Modernizr js -->        
+  <!-- Modernizr js -->
 	<script src="<?php echo base_url();?>assets/js/modernizr.js"></script>
 </head>
 
@@ -264,25 +289,8 @@
     </div>
     
   </footer> <!-- Footer ends -->
-  <a href="#" class="back-to-top"><span></span></a>  
-  <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
-  <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.easing.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.isotope.min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.fitvids.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.appear.js"></script>
-  <script src="<?php echo base_url();?>assets/js/retina.js"></script>
-  <script src="<?php echo base_url();?>assets/js/respond.min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.parallax-1.1.3.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.magnific-popup.min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.sticky.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.countTo.js"></script>
-  <script src="<?php echo base_url();?>assets/js/owl.carousel.min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.flexslider-min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/ion.rangeSlider.min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/selectnav.js"></script>
-  <script src="<?php echo base_url();?>assets/js/responsive-tabs.js"></script>
-  <script src="<?php echo base_url();?>assets/js/bootstrap-select.min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/functions.js"></script>
-	</body>
+  <a href="#" class="back-to-top"><span></span></a>
+
+
+  </body>
 </html>

@@ -9,11 +9,10 @@
 </div>
 
 <div class="container">
-
-    <div class="r-bg">
-        <div class="row">
-            <div class="col-sm-10">
-                <form class="form-horizontal"  id="register_form" action="register/registers" method="post">
+    <div class="row">
+        <div class="col-md-offset-1 col-sm-10">
+            <div class="r-bg">
+                <form class="form-horizontal"  id="register_form" action="" method="post">
 
                     <div class="form-group">
                         <label  class="col-lg-3 control-label">Full Name</label>
@@ -70,7 +69,7 @@
 ?>
 
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function(){
         $('#register_form')
             .bootstrapValidator({
                 message: 'This value is not valid',
