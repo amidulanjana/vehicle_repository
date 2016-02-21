@@ -81,6 +81,12 @@ body {
   background-color: #FFF;
 }
 
+
+
+
+
+
+
 /* --------------------------------------------------------	*/
 /* Typography */
 /* --------------------------------------------------------	*/
@@ -339,14 +345,14 @@ ul.menu-right-bar-ul li.text {
 .navbar-move {
   position:fixed !important;
   top:0px;
-  background: url("http://localhost/vehicle/img/pattern.png") top left;
+  background: url(http://localhost/vehicle_repository/img/pattern.png) top left;
   background-repeat-x: repeat;
   background-repeat-y: repeat;  
   padding:0px;
 }
 
 .navbar-background {
-  background: url("http://localhost/vehicle/img/pattern.png") top left;
+  background: url(http://localhost/vehicle_repository/img/pattern.png) top left;
   background-repeat-x: repeat;
   background-repeat-y: repeat;
 }
@@ -555,7 +561,7 @@ ul.menu-right-bar-ul li.text {
 /* --------------------------------------------------------	*/ 
 .promo-video-container {
   position: relative;
-  background: url(http://localhost/vehicle/img/footer/1.jpg) top left repeat-x;
+  background: url(http://localhost/vehicle_repository/img/footer/1.jpg) top left repeat-x;
   background-size: cover;
 }
 
@@ -2046,14 +2052,14 @@ transition: all .5s ease-in-out;
 
 .footer-top {
   position:relative;
-  background: url(http://localhost/vehicle/img/footer/1.jpg) top left repeat-x;
+  background: url(http://localhost/vehicle_repository/img/footer/1.jpg) top left repeat-x;
   background-size: cover;
 }
 
 .footer-bottom {
   position:relative;
   background-color: rgba(44,43,43,1);
-  background: url(http://localhost/vehicle/img/pattern.png) top left;
+  background: url(http://localhost/vehicle_repository/img/pattern.png) top left;
   background-repeat: repeat-y repeat-x;
 }
 
@@ -2612,7 +2618,7 @@ margin-bottom: -7px;
 
 /* Ion.RangeSlider
 // css version 2.0.2
-// © 2013-2014 Denis Ineshin | IonDen.com
+// ï¿½ 2013-2014 Denis Ineshin | IonDen.com
 // ===================================================================================================================*/
 
 /* =====================================================================================================================
@@ -2758,8 +2764,8 @@ margin-bottom: -7px;
     border-color: transparent !important;
 } /* Ion.RangeSlider, Simple Skin
 // css version 2.0.0
-// © Denis Ineshin, 2014    https://github.com/IonDen
-// © guybowden, 2014        https://github.com/guybowden
+// ï¿½ Denis Ineshin, 2014    https://github.com/IonDen
+// ï¿½ guybowden, 2014        https://github.com/guybowden
 // ===================================================================================================================*/
 
 /* =====================================================================================================================

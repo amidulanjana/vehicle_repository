@@ -1,72 +1,82 @@
-<div class="page-header">
+<?php $this->load->view('layout/header')?>
+
+<section id="section">
     <div class="container">
         <div class="row">
-            <div class="col-xs-12">
-                <div class="page-title">Register form</div>
-            </div>
+
+                <div class="page-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="page-title">Register form</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-offset-1 col-sm-10">
+                            <div class="r-bg">
+                                <form class="form-horizontal"  id="register_form" action="register/Add_user" method="post">
+
+                                    <div class="form-group">
+                                        <label  class="col-lg-3 control-label">Full Name</label>
+                                        <div class="col-lg-4">
+                                            <input type="text" class="form-control" value="<?php echo set_value('firstName') ?>" name="firstName" placeholder="First name" />
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <input type="text" class="form-control" name="lastName" placeholder="Last name" />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label  class="col-lg-3 control-label">Email</label>
+                                        <div class="col-lg-5">
+                                            <input type="text" class="form-control" name="email" placeholder="Email">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label  class="col-lg-3 control-label">User Name</label>
+                                        <div class="col-lg-5">
+                                            <input type="text" class="form-control" name="username" autocomplete="off" placeholder="User Name">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label  class="col-lg-3 control-label">Password</label>
+                                        <div class="col-lg-5">
+                                            <input type="password" class="form-control" name="password" placeholder="Password">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label  class="col-lg-3 control-label">Retype password</label>
+                                        <div class="col-lg-5">
+                                            <input type="password" class="form-control" name="confirmed_password" placeholder="Confirmed password">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-3 col-sm-10">
+                                            <input type="submit" class="btn btn-default" value="Register">
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
         </div>
     </div>
-</div>
+</section>  <!-- section ends -->
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-offset-1 col-sm-10">
-            <div class="r-bg">
-                <form class="form-horizontal"  id="register_form" action="" method="post">
+<?php $this->load->view('layout/footer')?>
 
-                    <div class="form-group">
-                        <label  class="col-lg-3 control-label">Full Name</label>
-                        <div class="col-lg-4">
-                            <input type="text" class="form-control" name="firstName" placeholder="First name" />
-                        </div>
-                        <div class="col-lg-4">
-                            <input type="text" class="form-control" name="lastName" placeholder="Last name" />
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label  class="col-lg-3 control-label">Email</label>
-                        <div class="col-lg-5">
-                            <input type="text" class="form-control" name="email" placeholder="Email">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label  class="col-lg-3 control-label">User Name</label>
-                        <div class="col-lg-5">
-                            <input type="text" class="form-control" name="username" placeholder="User Name">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label  class="col-lg-3 control-label">Password</label>
-                        <div class="col-lg-5">
-                            <input type="password" class="form-control" name="password" placeholder="Password">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label  class="col-lg-3 control-label">Retype password</label>
-                        <div class="col-lg-5">
-                            <input type="password" class="form-control" name="confirmed_password" placeholder="Confirmed password">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-sm-offset-3 col-sm-10">
-                            <input type="submit" class="btn btn-default" value="Register">
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<?php
-
-?>
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -76,7 +86,7 @@
                 feedbackIcons: {
                     valid: 'glyphicon glyphicon-ok',
                     invalid: 'glyphicon glyphicon-remove',
-                    validating: 'glyphicon glyphicon-refresh'
+                    validating: 'glyphicon glyphicon-refresh gly-spin'
                 },
                 fields: {
 
@@ -124,7 +134,19 @@
                             regexp: {
                                 regexp: /^[a-zA-Z0-9_\.]+$/,
                                 message: 'The username can only consist of alphabetical, number, dot and underscore'
+                            },
+
+
+                            remote: {
+                                message: 'This username is already registered',
+                                url: 'register/validate_username',
+                                data: {
+                                    type: 'username'
+                                },
+                                type: 'POST',
+                                delay: 1000
                             }
+
                         }
                     },
                     email: {
@@ -134,6 +156,16 @@
                             },
                             emailAddress: {
                                 message: 'The input is not a valid email address'
+                            },
+
+                            remote: {
+                                message: 'This email is already registered',
+                                url: 'register/validate_email',
+                                data: {
+                                    type: 'email'
+                                },
+                                type: 'POST',
+                                delay: 1000
                             }
                         }
                     },
@@ -149,6 +181,10 @@
                         validators: {
                             notEmpty: {
                                 message: 'The password is required and can\'t be empty'
+                            },
+                            identical: {
+                                field: 'password',
+                                message: 'The password and its confirm are not the same'
                             }
                         }
                     }

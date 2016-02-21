@@ -37,26 +37,7 @@
   <link href='http://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Cabin:400,600' rel='stylesheet' type='text/css'>
 
-  <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
-  <script src="<?php echo base_url();?>assets/js/bootstrapValidator.js"></script>
-  <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.easing.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.isotope.min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.fitvids.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.appear.js"></script>
-  <script src="<?php echo base_url();?>assets/js/retina.js"></script>
-  <script src="<?php echo base_url();?>assets/js/respond.min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.parallax-1.1.3.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.magnific-popup.min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.sticky.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.countTo.js"></script>
-  <script src="<?php echo base_url();?>assets/js/owl.carousel.min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/jquery.flexslider-min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/ion.rangeSlider.min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/selectnav.js"></script>
-  <script src="<?php echo base_url();?>assets/js/responsive-tabs.js"></script>
-  <script src="<?php echo base_url();?>assets/js/bootstrap-select.min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/functions.js"></script>
+
 
   <!-- Internet Explorer condition - HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -64,6 +45,7 @@
 	<![endif]-->
   <!-- Modernizr js -->
 	<script src="<?php echo base_url();?>assets/js/modernizr.js"></script>
+
 </head>
 
 <body class="no-main-slider">
@@ -182,7 +164,7 @@
       <div class="container">
         <div class="row">
 <!--          { SITE CONTENT (You can do your work here)}-->
-          <?php $this->load->view($register_view)?>
+          <?php $this->load->view($profile)?>
 
         </div>
       </div>
@@ -294,3 +276,24 @@
 
   </body>
 </html>
+
+<script src="<?php echo base_url();?>assets/js/jquery.js"></script>
+<script src="<?php echo base_url();?>assets/js/bootstrapValidator.js"></script>
+<script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.easing.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.isotope.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.fitvids.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.appear.js"></script>
+<script src="<?php echo base_url();?>assets/js/retina.js"></script>
+<script src="<?php echo base_url();?>assets/js/respond.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.parallax-1.1.3.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.magnific-popup.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.sticky.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.countTo.js"></script>
+<script src="<?php echo base_url();?>assets/js/owl.carousel.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/jquery.flexslider-min.js"></script>
+<script src="<?php echo base_url();?>assets/js/ion.rangeSlider.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/selectnav.js"></script>
+<script src="<?php echo base_url();?>assets/js/responsive-tabs.js"></script>
+<script src="<?php echo base_url();?>assets/js/bootstrap-select.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/functions.js"></script>

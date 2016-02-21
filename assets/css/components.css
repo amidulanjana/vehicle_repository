@@ -1114,7 +1114,7 @@ z-index: 1;
   overflow: hidden;
   background-color:rgba(0,0,0,0.5);
   margin-top: 0px;
-  background: url(http://localhost/vehicle/img/slider-main/1.jpg) center center;
+  background: url(../img/slider-main/1.jpg) center center;
   background-size:cover;
   background-attachment: fixed;  
   color:#FFF;
