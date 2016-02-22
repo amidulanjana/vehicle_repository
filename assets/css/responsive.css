@@ -14,7 +14,7 @@ body {
 }
 
 body.no-main-slider .navbar-inner {
-  background: url(http://localhost/vehicle_repository/img/pattern.png) top left;
+  background: url(../img/pattern.png) top left;
   background-repeat-x: repeat;
   background-repeat-y: repeat; 
 }

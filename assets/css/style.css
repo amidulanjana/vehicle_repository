@@ -345,14 +345,14 @@ ul.menu-right-bar-ul li.text {
 .navbar-move {
   position:fixed !important;
   top:0px;
-  background: url(http://localhost/vehicle_repository/img/pattern.png) top left;
+  background: url(../img/pattern.png) top left;
   background-repeat-x: repeat;
-  background-repeat-y: repeat;  
+  background-repeat-y: repeat;
   padding:0px;
 }
 
 .navbar-background {
-  background: url(http://localhost/vehicle_repository/img/pattern.png) top left;
+  background: url(../img/pattern.png) top left;
   background-repeat-x: repeat;
   background-repeat-y: repeat;
 }
@@ -561,7 +561,7 @@ ul.menu-right-bar-ul li.text {
 /* --------------------------------------------------------	*/ 
 .promo-video-container {
   position: relative;
-  background: url(http://localhost/vehicle_repository/img/footer/1.jpg) top left repeat-x;
+  background: url(../img/footer/1.jpg) top left repeat-x;
   background-size: cover;
 }
 
@@ -2052,14 +2052,14 @@ transition: all .5s ease-in-out;
 
 .footer-top {
   position:relative;
-  background: url(http://localhost/vehicle_repository/img/footer/1.jpg) top left repeat-x;
+  background: url(../img/footer/1.jpg) top left repeat-x;
   background-size: cover;
 }
 
 .footer-bottom {
   position:relative;
   background-color: rgba(44,43,43,1);
-  background: url(http://localhost/vehicle_repository/img/pattern.png) top left;
+  background: url(../img/pattern.png) top left;
   background-repeat: repeat-y repeat-x;
 }
 

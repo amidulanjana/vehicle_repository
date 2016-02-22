@@ -11,7 +11,7 @@ class register_validate_model extends CI_Model
 
         if ($result->num_rows() == 1) {
 
-            return $result->row(0)->id;
+            return $result->row(0)->user_id;
 
         } else {
 
@@ -30,7 +30,7 @@ class register_validate_model extends CI_Model
 
         if ($result->num_rows() == 1) {
 
-            return $result->row(0)->id;
+            return $result->row(0)->user_id;
 
         } else {
 

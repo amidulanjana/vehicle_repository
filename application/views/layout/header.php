@@ -87,7 +87,7 @@
 	    <div class="container">
         <div class="navbar-inner">
           <!-- logo-->                       
-					<a href="../index.html" title="Home" class="logo pull-left"><img src="<?php echo base_url();?>img/logo.png " alt="logo"></a>
+					<a href="../index.html" title="Home" class="logo pull-left"><img src="<?php echo base_url();?>assets/img/logo.png " alt="logo"></a>
           <!-- logo ends -->         
           
           <!-- Menu --> 
