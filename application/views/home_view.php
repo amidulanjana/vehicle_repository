@@ -1,27 +1,15 @@
 <h1>Hellooo</h1>
 
-<p class="bg-success">
+<?php
 
-    <?php
+if ($logged_in) {
+    $firstname = $this->session->userdata('first_name');
+    echo $firstname;
+} else {
+    echo "error";
+}
 
-        if($this->session->flashdata('login_success'))
-        {
-            echo $this->session->flashdata('login_success');
-        }
 
-    ?>
+?>
 
-</p>
-
-<div class="bg-danger">
-
-    <?php
-
-    if($this->session->flashdata('login_unsuccess'))
-    {
-        echo $this->session->flashdata('login_unsuccess');
-    }
-
-    ?>
-
-</div>
+<a href="login/logout" class="btn btn-success">logout</a>

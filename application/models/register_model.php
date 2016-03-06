@@ -1,8 +1,49 @@
 <?php
 
-class user_model extends CI_Model{
+class register_model extends CI_Model{
 
     private $email_code;
+
+
+    public function validate_user_email($email)
+    {
+        $this->db->where('email', $email);
+
+        $result = $this->db->get('users');
+
+        if ($result->num_rows() == 1) {
+
+            return $result->row(0)->user_id;
+
+        } else {
+
+            return false;
+        }
+
+
+    }
+
+    public function validate_user_name($username)
+    {
+
+        $this->db->where('username', $username);
+
+        $result = $this->db->get('users');
+
+        if ($result->num_rows() == 1) {
+
+            return $result->row(0)->user_id;
+
+        } else {
+
+            return false;
+        }
+
+
+    }
+
+
+
 
     public function register_user($email, $username,$firstName, $lastName,$password)
     {
@@ -19,45 +60,39 @@ class user_model extends CI_Model{
 
         if($this->db->affected_rows()==1)
         {
-            $this->set_session($username,$email,$firstName);
-            //print_r($this->session->all_userdata());
+            $sql="SELECT first_name,reg_time FROM users WHERE email ='".$email."'";
+            $result=$this->db->query($sql);
+            $row=$result->row();
+            $name=$row->first_name;
 
-           // echo "successs";
-            $this->send_validation_email();
+            $this->set_email_code($email);
+            $this->send_validation_email($email,$name);
+
+            return true;
         }
 
 
 
     }
 
-    public function set_session($username,$email,$firstName){
+    public function set_email_code($email){
 
-        $sql="SELECT user_id,reg_time FROM users WHERE email ='".$email."'";
+        $sql="SELECT reg_time FROM users WHERE email ='".$email."'";
         $result=$this->db->query($sql);
         $row=$result->row();
-
-        $sess_data = array(
-            'user_id'=>$row->user_id,
-            'username'=>$username,
-            'email'=>$email,
-            'firstName'=>$firstName,
-            'logged_in'=>0
-        );
         $this->email_code=md5((string)$row->reg_time);
-        $this->session->set_userdata($sess_data);
-
 
     }
 
 
-    public function send_validation_email(){
+    public function send_validation_email($email,$name){
 
         $config = Array(
             'protocol' => 'smtp',
             'smtp_host' => 'ssl://smtp.googlemail.com',
             'smtp_port' => 465,
-            'smtp_user' => 'portalautomobile@gmail.com', // change it to yours
-            'smtp_pass' => 'dlcqqvpdffibjvgx', // change it to yours
+            'smtp_user' => 'portalautomobile@gmail.com',
+            'smtp_pass' => 'dlcqqvpdffibjvgx',
             'mailtype' => 'html',
             'charset' => 'iso-8859-1',
             'wordwrap' => TRUE
@@ -65,10 +100,9 @@ class user_model extends CI_Model{
 
         $this->load->library('email',$config);
         $this->email->set_newline("\r\n");
-        $email=$this->session->userdata('email');
         $email_code=$this->email_code;
 
-        $this->email->from('portalautomobile@gmail.com', 'Your Name');
+        $this->email->from('portalautomobile@gmail.com', 'Amila');
         $this->email->to("{$email}");
         //$this->email->cc('another@another-example.com');
         //$this->email->bcc('them@their-example.com');
@@ -83,7 +117,7 @@ class user_model extends CI_Model{
                   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                   </head>
                   </html>';
-        $message.='<p>Dear '.$this->session->userdata('firstName'). '</p>
+        $message.='<p>Dear '.$name. '</p>
 
                    <p>Thank you for registering on ::: Automobile Portal !
 

@@ -1,74 +1,56 @@
 <?php
 
+class Login extends CI_Controller
+{
 
-class Login extends CI_Controller{
-
-    public function index(){
-
-        $this->load->view("users/login_view");
-
-    }
-
-
-
-    public function loginUser()
+    public function __construct()
     {
-        // echo $this->input->post('username');
+        parent::__construct();
+        $this->load->model('login_model');
+    }
 
-        $this->form_validation->set_rules('username','Username','trim|required|min_length[2]');
-        $this->form_validation->set_rules('password','Password','trim|required|min_length[2]');
-
-        if($this->form_validation->run()==False)
-        {
-            $data=array(
-                'errors' => validation_errors(),
-            );
-
-            $this->session->set_flashdata($data);
-            redirect('login/index');
-        }
-
-        else{
-
-            $username=$this->input->post('username');
-            $password=$this->input->post('password');
-
-            $user_id=$this->user_model->login_user($username,$password);
-
-            if($user_id){
-
-                $user_data=array(
-
-                    'user_id'=>$user_id,
-                    'username'=> $username,
-                    'logged_in'=>true
-
-                );
-
-                $this->session->set_userdata($user_data);
-
-                $this->session->set_flashdata('login_success','You are now logged in');
-
-                //$data['main_view']='admin_view';
-
-                $this->load->view('users/user_profile');
-
-                //redirect('home/index');
-
-            } else{
-
-                $this->session->set_flashdata('login_unsuccess','You are not logged in');
-
-                //redirect('register');
-            }
-
-        }
-
-
+    public function index()
+    {
+        $this->load->view("layout/login_view");
 
     }
 
+    public function validate_login_user()
+    {
 
+        $name=$this->input->post('username');
+        $password=$this->input->post('password');
 
+        $user_id=$this->login_model->login_user($name,$password);
 
+//        global $list;
+//
+//        if($user_id==true) {
+//            $list = array('message' => "true");
+//        }elseif($user_id==false){
+//            $list=array('message' => "false");
+//        }
+
+        $list = array('message' => $user_id);
+        $c=json_encode($list);
+
+        echo $c;
+    }
+
+    public function logout()
+    {
+        if ($this->session->userdata('logged_in')) {
+
+            $this->session->unset_userdata('user_id');
+            $this->session->unset_userdata('user_name');
+            $this->session->unset_userdata('first_name');
+            $this->session->unset_userdata('email');
+            $this->session->unset_userdata('logged_in');
+            $this->session->sess_destroy();
+            redirect('register', 'refresh');
+        }else{
+            redirect('register', 'refresh');
+        }
+
+    }
 }

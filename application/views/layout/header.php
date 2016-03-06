@@ -11,7 +11,7 @@
 	<meta name="keywords" content="your keywords">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Favicon -->
-  <link href="<?php echo base_url();?>img/favicon.png" rel="icon" type="image/png">
+  <link href="<?php echo base_url();?>assets/img/favicon.png" rel="icon" type="image/png">
   <!-- Bootstrap style -->
   <link href="<?php echo base_url();?>assets/css/bootstrap.css" rel="stylesheet" media="screen" />
   <!-- Font Awesome Style -->
@@ -34,6 +34,9 @@
   <link href="<?php echo base_url();?>assets/css/bootstrapValidator.css" rel="stylesheet" media="screen" />
   <!-- Icon_refersh (validation) css -->
   <link href="<?php echo base_url();?>assets/css/icon_refresh.css" rel="stylesheet" media="screen" />
+  <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
+  <link href="<?php echo base_url();?>assets/css/extralayers.css" rel="stylesheet" media="screen" />
+  <link href="<?php echo base_url();?>assets/rs-plugin/css/settings.css" rel="stylesheet" media="screen" />
   <!-- Google Web Fonts -->
   <link href='http://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Cabin:400,600' rel='stylesheet' type='text/css'>
@@ -145,15 +148,34 @@
             <ul class="menu-right-bar-ul">
             <li class="text hidden-sm hidden-xs">1-800-555-6789</li>
             <li><a href="shop-cart.html" class="button btn btn-primary" role="button"><i class="fa fa-shopping-cart"></i> (2)</a></li>
-            <li><a data-toggle="modal" href="#singInForm" class="btn btn-primary">Sign In</a></li>
+
+              <?php
+              $user=$this->session->userdata('user_id');
+              if (isset($user)) {
+                echo '<li><a href="login/logout" class="btn btn-primary">Log Out</a></li>';
+              }else{
+                echo '<li><a data-toggle="modal" href="#singInForm" class="btn btn-primary">Sign In</a></li>';
+
+              }
+              ?>
+
             </ul>
           </div>
         </div>  
       </div>           
-    </nav>         
-    <!-- Modal -->
+    </nav>
 
 
+
+
+    <script>
+
+
+
+
+
+
+    </script>
 
   </header>
 

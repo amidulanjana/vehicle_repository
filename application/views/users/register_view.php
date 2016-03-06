@@ -1,4 +1,4 @@
-<?php $this->load->view('layout/header')?>
+<?php $this->load->view('layout/login_view')?>
 
 <section id="section">
     <div class="container">
