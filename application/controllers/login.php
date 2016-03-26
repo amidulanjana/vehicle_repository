@@ -23,14 +23,6 @@ class Login extends CI_Controller
 
         $user_id=$this->login_model->login_user($name,$password);
 
-//        global $list;
-//
-//        if($user_id==true) {
-//            $list = array('message' => "true");
-//        }elseif($user_id==false){
-//            $list=array('message' => "false");
-//        }
-
         $list = array('message' => $user_id);
         $c=json_encode($list);
 
@@ -47,9 +39,9 @@ class Login extends CI_Controller
             $this->session->unset_userdata('email');
             $this->session->unset_userdata('logged_in');
             $this->session->sess_destroy();
-            redirect('register', 'refresh');
+            redirect('home', 'refresh');
         }else{
-            redirect('register', 'refresh');
+            redirect('home', 'refresh');
         }
 
     }

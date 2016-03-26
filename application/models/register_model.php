@@ -4,7 +4,8 @@ class register_model extends CI_Model{
 
     private $email_code;
 
-
+    //email value is getting from controller
+    //controller is validate email()
     public function validate_user_email($email)
     {
         $this->db->where('email', $email);
@@ -23,6 +24,8 @@ class register_model extends CI_Model{
 
     }
 
+    //username value is getting from controller
+    //function is validate username()
     public function validate_user_name($username)
     {
 
@@ -43,8 +46,8 @@ class register_model extends CI_Model{
     }
 
 
-
-
+    //username value is getting from controller
+    //function is Add_user()
     public function register_user($email, $username,$firstName, $lastName,$password)
     {
         $data = array(
@@ -84,7 +87,9 @@ class register_model extends CI_Model{
 
     }
 
-
+    //sending email
+    //gettng $email value from register form
+    //$email code is for activation the account
     public function send_validation_email($email,$name){
 
         $config = Array(
@@ -135,6 +140,8 @@ class register_model extends CI_Model{
 
     }
 
+    //validate email that comes from link
+    //attributes are email_address,$email_code
     public function validate_email($email_address,$email_code){
 
         $sql="SELECT email,reg_time,first_name FROM users WHERE email='{$email_address}'";
@@ -158,7 +165,7 @@ class register_model extends CI_Model{
         }
     }
 
-
+    //update activate into 1 if email validation success
     public function activate_account($email_address){
         $sql="UPDATE users SET active=1 WHERE email='{$email_address}'";
         $this->db->query($sql);

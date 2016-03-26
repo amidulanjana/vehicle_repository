@@ -11,7 +11,7 @@
 	<meta name="keywords" content="your keywords">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Favicon -->
-  <link href="<?php echo base_url();?>assets/img/favicon.png" rel="icon" type="image/png">
+  <link href="<?php echo base_url();?>img/favicon.png" rel="icon" type="image/png">
   <!-- Bootstrap style -->
   <link href="<?php echo base_url();?>assets/css/bootstrap.css" rel="stylesheet" media="screen" />
   <!-- Font Awesome Style -->
@@ -147,10 +147,16 @@
           <div class="menu-right-bar">
             <ul class="menu-right-bar-ul">
             <li class="text hidden-sm hidden-xs">1-800-555-6789</li>
-            <li><a href="shop-cart.html" class="button btn btn-primary" role="button"><i class="fa fa-shopping-cart"></i> (2)</a></li>
 
               <?php
               $user=$this->session->userdata('user_id');
+              if (isset($user)) {
+                echo '<li><a href="profile" class="button btn btn-primary" role="button">My Profile</a></li> ';
+              }
+              ?>
+
+              <?php
+
               if (isset($user)) {
                 echo '<li><a href="login/logout" class="btn btn-primary">Log Out</a></li>';
               }else{

@@ -3,18 +3,11 @@
 
 class Register extends CI_Controller{
 
-    private $logged_in;
-
-
     public function __construct()
     {
         parent::__construct();
         $this->load->model('register_model');
-//        if($this->session->userdata('logged_in')){
-//            $this->logged_in=true;
-//        }else{
-//            $this->logged_in=false;
-//        }
+
     }
 
     public function index(){
@@ -23,10 +16,13 @@ class Register extends CI_Controller{
 
     }
 
+    //validate user email
     public function validate_email()
     {
 
         $email=$this->input->post('email');
+
+        //getting a return message from the register model
         $user_id=$this->register_model->validate_user_email($email);
 
         global $isAvailable;
@@ -57,7 +53,6 @@ class Register extends CI_Controller{
 
     public function Add_user()
     {
-        // $this->load->model('user_model');
         $email = $this->input->post('email');
         $username = $this->input->post('username');
         $firstName = $this->input->post('firstName');
@@ -71,7 +66,7 @@ class Register extends CI_Controller{
     }
 
     public function verify_email($email_address,$email_code){
-      //  $this->load->model('user_model');
+
         $email_code=trim($email_code);
         $validated=$this->register_model->validate_email($email_address,$email_code);
 

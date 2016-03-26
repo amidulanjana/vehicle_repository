@@ -45,6 +45,45 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="pick-one" class="col-lg-3 control-label">Account Type</label>
+                                        <div class="col-lg-5  pick-one" id="pick-one">
+                                            <label class="radio-inline">
+                                                <input type="radio" name="inlineRadioOptions" id="personal"  checked value="personal"> Personal
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="inlineRadioOptions" id="company" value="company"> Company
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div id="newAddress">
+                                        <div class="form-group">
+                                            <label  class="col-lg-3 control-label">Company</label>
+                                            <div class="col-lg-5">
+                                                <input type="text" class="form-control" name="company" autocomplete="off" placeholder="Company" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="newAddress">
+                                        <div class="form-group">
+                                            <label  class="col-lg-3 control-label">Address</label>
+                                            <div class="col-lg-5">
+                                                <input type="text" class="form-control" name="address" autocomplete="off" placeholder="Address" >
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="newAddress">
+                                        <div class="form-group">
+                                            <label  class="col-lg-3 control-label">Phone No</label>
+                                            <div class="col-lg-5">
+                                                <input type="text" class="form-control" name="phoneNo" autocomplete="off" placeholder="Phone No" >
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label  class="col-lg-3 control-label">Password</label>
                                         <div class="col-lg-5">
                                             <input type="password" class="form-control" name="password" placeholder="Password">
@@ -112,6 +151,48 @@
                             regexp: {
                                 regexp: /^[a-zA-Z\s]+$/,
                                 message: 'The username can only consist of alphabetical, number, dot and underscore'
+                            }
+                        }
+                    },
+
+                    inlineRadioOptions: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The gender is required'
+                            }
+                        }
+                    },
+
+                    company: {
+                        enabled: false,
+                        validators: {
+                            notEmpty: {
+                                message: 'The company is required and cannot be empty'
+                            }
+                        }
+                    },
+
+                    address: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The password is required and can\'t be empty'
+                            },
+                            stringLength: {
+                                min: 6,
+                                max: 130,
+                                message: 'The address is not a valid address'
+                            },
+                        }
+                    },
+
+                    phoneNo: {
+                        validators: {
+                            notEmpty: {
+                                message: 'The password is required and can\'t be empty'
+                            },
+                            regexp: {
+                                regexp: /^\(?0\d{2}\)?[\s\-]?\d{7}$/,
+                                message: 'Incorrect Phone number.Please use local phone numbers'
                             }
                         }
                     },
@@ -189,7 +270,18 @@
                         }
                     }
                 }
-            })
+            });
+
+        // Enable street/city/country validators if user want to ship to other address
+        $('input[name="inlineRadioOptions"]').on('change', function() {
+            var bootstrapValidator = $('#register_form').data('bootstrapValidator'),
+                shipNewAddress     = ($(this).val() == 'company');
+
+            shipNewAddress ? $('#newAddress').find('.form-control').removeAttr('disabled')
+                : $('#newAddress').find('.form-control').attr('disabled', 'disabled');
+
+            bootstrapValidator.enableFieldValidators('company', shipNewAddress);
+        });
 
     });
 </script>

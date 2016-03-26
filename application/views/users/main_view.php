@@ -138,12 +138,16 @@
                 <!-- Menu ends -->
                 <div class="menu-right-bar">
                     <ul class="menu-right-bar-ul">
+                        <?php $user=$this->session->userdata('user_id'); ?>
+
                         <li class="text hidden-sm hidden-xs">1-800-555-6789</li>
-                        <li><a href="shop-cart.html" class="button btn btn-primary" role="button"><i
-                                    class="fa fa-shopping-cart"></i> (2)</a></li>
+                        <?php
+                        if (isset($user)) {
+                         echo '<li><a href="profile" class="button btn btn-primary" role="button">My Profile</a></li> ';
+                        }
+                        ?>
                         <li>
                             <?php
-                            $user=$this->session->userdata('user_id');
                             if (isset($user)) {
                                 echo '<li><a href="login/logout" class="btn btn-primary">Log Out</a></li>';
                             }else{
@@ -184,7 +188,7 @@
 
                             </div>
                             <label>
-                                <a href=""><small>Not yet registered ?</small></a>
+                                <a href="register"><small>Not yet registered ?</small></a>
                             </label>
                         </div>
 
