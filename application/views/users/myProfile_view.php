@@ -192,7 +192,7 @@
 
 <!--modal for message-->
 <div  class="modal fade " id="messageModal" tabindex="-1" role="dialog">
-    <div style="width: 30%" class="modal-dialog" role="document">
+    <div style="width:350px" class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -220,7 +220,7 @@
 
 <!--modal for feedback-->
 <div  class="modal fade " id="feedBackModal" tabindex="-1" role="dialog">
-    <div style="width: 30%" class="modal-dialog" role="document">
+    <div style="width:350px " class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
