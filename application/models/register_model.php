@@ -48,14 +48,18 @@ class register_model extends CI_Model{
 
     //username value is getting from controller
     //function is Add_user()
-    public function register_user($email, $username,$firstName, $lastName,$password)
+    public function register_user($email, $username,$firstName, $lastName,$password,$accountType,$company,$address,$phone)
     {
         $data = array(
             'username' => $username,
             'password' => $password,
             'first_name' => $firstName,
             'last_name' => $lastName,
-            'email' => $email
+            'email' => $email,
+            'accountType'=>$accountType,
+            'company'=>$company,
+            'address'=>$address,
+            'phoneNo'=>$phone
 
         );
 

@@ -11,25 +11,65 @@ class profile extends CI_Controller{
 
     public  function  index(){
 
-        $add_info=$this->profile_model->view_my_ads();
-        $add_details=array(
-            'id'=>$add_info['id'],
-            'brand_name'=>$add_info['brand_name'],
-            'location'=>$add_info['location'],
-            'engine'=>$add_info['engine'],
-            'mileage'=>$add_info['mileage'],
-            'condition'=>$add_info['condition'],
-            'image'=>$add_info['image'],
+        $add_info['ad']=$this->profile_model->view_my_ads();
+        $userInfo=$this->profile_model->userProfile(10);
+
+        $add_info['userData']=array(
+            'fname'=>$userInfo['first_name'],
+            'lname'=>$userInfo['last_name'],
+            'uname'=>$userInfo['username'],
+            'company'=>$userInfo['company'],
+            'address'=>$userInfo['address'],
+            'email'=>$userInfo['email'],
+            'phone'=>$userInfo['phoneNo'],
+            'accountType'=>$userInfo['accountType']
         );
 
-        $this->load->view('users/user_profile',$add_details);
+        $this->load->view('users/myProfile_view',$add_info);
 
     }
 
-    public function show_my_ads(){
+    public function userProfile($userID){
 
+        $userInfo=$this->profile_model->userProfile($userID);
+        $userData['data']= $this->profile_model->showFeedback();
+        $userData['ad']=$this->profile_model->view_my_ads();
+
+        $userData['userData']=array(
+            'fname'=>$userInfo['first_name'],
+            'lname'=>$userInfo['last_name'],
+            'company'=>$userInfo['company'],
+            'address'=>$userInfo['address'],
+            'email'=>$userInfo['email'],
+            'phone'=>$userInfo['phoneNo']
+        );
+
+        $this->load->view("users/userProfile_view",$userData);
 
     }
+
+    public function feedBack(){
+
+        //$loggedUser=$this->input->post('loggedUser');
+        if($_POST['feedBack']){
+
+        $user = $this->profile_model->addFeedback(1, $_POST['feedBack']);
+        $list = array('message' => $user);
+        $c = json_encode($list);
+
+        echo $c;
+
+        }
+    }
+
+    public function updateRating(){
+
+        if(isset($_POST['rate'])) {
+            $this->profile_model->updateRating($_POST['rate']);
+        }
+    }
+
+
 
 }
 

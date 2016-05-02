@@ -58,8 +58,12 @@ class Register extends CI_Controller{
         $firstName = $this->input->post('firstName');
         $lastName = $this->input->post('lastName');
         $password = sha1($this->config->item('salt') . $this->input->post('password'));
+        $accountType=$this->input->post('inlineRadioOptions');
+        $company=$this->input->post('company');
+        $address=$this->input->post('address');
+        $phone=$this->input->post('phoneNo');
 
-        $user_id = $this->register_model->register_user($email, $username, $firstName, $lastName, $password);
+        $user_id = $this->register_model->register_user($email, $username, $firstName, $lastName, $password,$accountType,$company,$address,$phone);
         $this->session->set_flashdata('message',$user_id );
         redirect("home");
 

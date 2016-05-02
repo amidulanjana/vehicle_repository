@@ -285,15 +285,16 @@ $('#myTabs a').click(function (e) {
 	 Move Nav
    --------------------------------------------------------	*/
 
-  $(window).scroll(function(){ 
-   if ($(this).scrollTop() >  10 ){ 
-    
+  $(window).scroll(function(){
+   if ($(this).scrollTop() >  90 ){
+
 	  $('.navbar').addClass("navbar-move");
       $('.navbar-inner').css({"background-color": "transparent"});
       $('.navbar-inner').css({"padding": "0"});
-    } 
+    }
     else{
       $('.navbar').removeClass("navbar-move");
+      $('.navbar-inner').removeAttr('style');
       $('.navbar-inner').css({"background-color": "f2f2f2"});
       $('.navbar-inner').css({"padding": "0 20"});
     }

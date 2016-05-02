@@ -21,32 +21,32 @@
                                 <form class="form-horizontal"  id="register_form" action="register/Add_user" method="post">
 
                                     <div class="form-group">
-                                        <label  class="col-lg-3 control-label">Full Name</label>
-                                        <div class="col-lg-4">
+                                        <label  class="col-lg-3 col-md-3 col-xs-3 control-label">Full Name</label>
+                                        <div class="col-lg-4 col-md-4 col-xs-4">
                                             <input type="text" class="form-control" value="<?php echo set_value('firstName') ?>" name="firstName" placeholder="First name" />
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-4 col-md-4 col-xs-4">
                                             <input type="text" class="form-control" name="lastName" placeholder="Last name" />
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label  class="col-lg-3 control-label">Email</label>
-                                        <div class="col-lg-5">
+                                        <label  class="col-lg-3 col-md-3 col-xs-3 control-label">Email</label>
+                                        <div class="col-lg-5 col-md-5 col-xs-5">
                                             <input type="text" class="form-control" name="email" placeholder="Email">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label  class="col-lg-3 control-label">User Name</label>
-                                        <div class="col-lg-5">
+                                        <label  class="col-lg-3 col-md-3 col-xs-3 control-label">User Name</label>
+                                        <div class="col-lg-5 col-md-5 col-xs-5">
                                             <input type="text" class="form-control" name="username" autocomplete="off" placeholder="User Name">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="pick-one" class="col-lg-3 control-label">Account Type</label>
-                                        <div class="col-lg-5  pick-one" id="pick-one">
+                                        <label for="pick-one" class="col-lg-3 col-md-3 col-xs-3 control-label">Account Type</label>
+                                        <div class="col-lg-5 col-md-5 col-xs-5  pick-one" id="pick-one">
                                             <label class="radio-inline">
                                                 <input type="radio" name="inlineRadioOptions" id="personal"  checked value="personal"> Personal
                                             </label>
@@ -58,8 +58,8 @@
 
                                     <div id="newAddress">
                                         <div class="form-group">
-                                            <label  class="col-lg-3 control-label">Company</label>
-                                            <div class="col-lg-5">
+                                            <label  class="col-lg-3 col-md-3 col-xs-3 control-label">Company</label>
+                                            <div class="col-lg-5 col-md-5 col-xs-5">
                                                 <input type="text" class="form-control" name="company" autocomplete="off" placeholder="Company" disabled>
                                             </div>
                                         </div>
@@ -67,8 +67,8 @@
 
                                     <div id="newAddress">
                                         <div class="form-group">
-                                            <label  class="col-lg-3 control-label">Address</label>
-                                            <div class="col-lg-5">
+                                            <label  class="col-lg-3 col-md-3 col-xs-3 control-label">Address</label>
+                                            <div class="col-lg-5 col-md-5 col-xs-5">
                                                 <input type="text" class="form-control" name="address" autocomplete="off" placeholder="Address" >
                                             </div>
                                         </div>
@@ -76,23 +76,23 @@
 
                                     <div id="newAddress">
                                         <div class="form-group">
-                                            <label  class="col-lg-3 control-label">Phone No</label>
-                                            <div class="col-lg-5">
+                                            <label  class="col-lg-3 col-md-3 col-xs-3 control-label">Phone No</label>
+                                            <div class="col-lg-5 col-md-5 col-xs-5">
                                                 <input type="text" class="form-control" name="phoneNo" autocomplete="off" placeholder="Phone No" >
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label  class="col-lg-3 control-label">Password</label>
-                                        <div class="col-lg-5">
+                                        <label  class="col-lg-3 col-md-3 col-xs-3 control-label">Password</label>
+                                        <div class="col-lg-5 col-md-5 col-xs-5">
                                             <input type="password" class="form-control" name="password" placeholder="Password">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label  class="col-lg-3 control-label">Retype password</label>
-                                        <div class="col-lg-5">
+                                        <label  class="col-lg-3 col-md-3 col-xs-3 control-label">Retype password</label>
+                                        <div class="col-lg-5 col-md-5 col-xs-5">
                                             <input type="password" class="form-control" name="confirmed_password" placeholder="Confirmed password">
                                         </div>
                                     </div>

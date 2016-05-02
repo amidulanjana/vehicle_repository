@@ -37,6 +37,10 @@
   <!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
   <link href="<?php echo base_url();?>assets/css/extralayers.css" rel="stylesheet" media="screen" />
   <link href="<?php echo base_url();?>assets/rs-plugin/css/settings.css" rel="stylesheet" media="screen" />
+  <!--Star rating CSS  -->
+  <link href="<?php echo base_url();?>assets/css/star-rating.css" rel="stylesheet" media="screen" />
+  <link href="<?php echo base_url();?>assets/css/fileinput.css" rel="stylesheet" media="screen" />
+
   <!-- Google Web Fonts -->
   <link href='http://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Cabin:400,600' rel='stylesheet' type='text/css'>
@@ -54,6 +58,7 @@
   <script src="<?php echo base_url();?>assets/js/jquery.js"></script>
   <script src="<?php echo base_url();?>assets/js/bootstrapValidator.js"></script>
   <script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
+  <script src="<?php echo base_url();?>assets/js/functions.js"></script>
   <script src="<?php echo base_url();?>assets/js/jquery.easing.js"></script>
   <script src="<?php echo base_url();?>assets/js/jquery.isotope.min.js"></script>
   <script src="<?php echo base_url();?>assets/js/jquery.fitvids.js"></script>
@@ -70,7 +75,9 @@
   <script src="<?php echo base_url();?>assets/js/selectnav.js"></script>
   <script src="<?php echo base_url();?>assets/js/responsive-tabs.js"></script>
   <script src="<?php echo base_url();?>assets/js/bootstrap-select.min.js"></script>
-  <script src="<?php echo base_url();?>assets/js/functions.js"></script>
+  <script src="<?php echo base_url();?>assets/js/star-rating.js"></script>
+  <script src="<?php echo base_url();?>assets/js/fileinput.js"></script>
+
 
 
 
